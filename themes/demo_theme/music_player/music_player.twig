@@ -1,0 +1,36 @@
+<script src="https://cdn.jsdelivr.net/riot/2.3/riot+compiler.min.js"></script>
+<script type="riot/tag" src="../themes/demo_theme/music_player/app.tag"></script>
+<script type="riot/tag" src="../themes/demo_theme/music_player/song.tag"></script>
+<script type="riot/tag" src="../themes/demo_theme/music_player/raw.tag"></script>
+<script>
+	function loadJSON(path, success, error){
+	    var xhr = new XMLHttpRequest();
+	    xhr.onreadystatechange = function()
+	    {
+	        if (xhr.readyState === XMLHttpRequest.DONE) {
+	            if (xhr.status === 200) {
+	                if (success)
+	                    success(JSON.parse(xhr.responseText));
+	            } else {
+	                if (error)
+	                    error(xhr);
+	            }
+	        }
+	    };
+	    xhr.open("GET", path, true);
+	    xhr.send();
+	}
+
+	loadJSON('http://headless.localhost.com/api/songs',
+		function(data) {
+			console.log("Data loaded",data);
+			riot.compile(function() {
+				riot.mount('app',{'music_data': data});//once data exists, mount app
+			});
+		},
+		function(xhr) { console.error(xhr); }
+	);
+</script>
+
+<app></app>
+
