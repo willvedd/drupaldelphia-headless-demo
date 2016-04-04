@@ -82,6 +82,11 @@ function bartik_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
+
+  $songs_fallback = views_embed_view('songs_fallback', 'block');
+  $variables['songs_fallback'] = drupal_render($songs_fallback);
+
+  $variables['songs_var'] = 'lmndsafddfads';
 }
 
 /**

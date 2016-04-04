@@ -73,7 +73,6 @@
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
   <header>
-    <h1>Test!</h1>
     {{ title_prefix }}
     {% if not page %}
       <h2{{ title_attributes.addClass('node__title') }}>
@@ -94,6 +93,7 @@
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content }}
   </div>
+  <hr>
   <div>
     {% include directory ~ '/music_player/music_player.twig' %}
   </div>

@@ -4,7 +4,7 @@
 		<h2 style="display:inline">{this.opts.artist}</h2>
 	</div>
 	<div>
-		<raw if="{showPlayer}" content="{ embedCode }"/>
+		<raw if="{!showPlayer}" content="{ embedCode }"/>
 	</div>
 	<button onClick={togglePlayer}>Toggle Player</button>
 	<hr>
@@ -25,11 +25,6 @@
 			self.showPlayer = !self.showPlayer;
 			self.update();
 		}
-
-
-		
-
-
 
 	</script>
 </song>
