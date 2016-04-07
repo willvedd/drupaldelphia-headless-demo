@@ -85,6 +85,8 @@ Full separation between data layer and front-end layer.
 
 Think: Single page apps (SPAs).
 
+
+
 ---
 
 ![fit](videos/hmt.mov)
@@ -128,9 +130,15 @@ Think: Single page apps (SPAs).
 
 - JS reliance, _generally_
 
+^Editing in-place, menu system, routing, built-in login, built-in search, built-in 404/403. All things you’d need to rebuild.d
+
+^Initial bootstrap for frameworks on mobile sooo slow
+
 ^Sometimes the web isn't perfect perfect
 
 ^Lots of mobile browses still have trouble with JS
+
+^Proxy browsers, opera mini etc.
 
 
 ---
@@ -365,24 +373,34 @@ function api_custom() {
 n = 10, 600+ nodes w/17 fields each, 46kb
 
 ----
-#Server-side rendering 🤖
+#Server-side rendering
 
 - Markup is generated for initial render
 
 - Client handles subsequent renders
 
-- Result
+- Not waiting for JS framework boostrap :fire:
 
-- SEO and crawler benefits
+- SEO and crawler benefits 🤖
+
+^Server side is big deal
+
+^Talk doesn't do it justice
+
+
+----
+
+#Server-side rendering implementation
+
+- Quick and dirty solution? use a view
+
+- Well-engineered solution: add a server in your stack
 
 ![right fit](diagrams/isomorphic-full-diagram.png)
 
-----
-#Server-side rendering
+^Again, big deal, talk doesn't do it justice
 
-- Quick and dirty solution: use a view
-
-- Well engineered solution: add a server in your stack
+^Due to limited time and resources, went with a view
 
 ----
 #Takeaways  :sunglasses:
@@ -394,3 +412,7 @@ The headless approach isn’t about following the trend and applying it haphazar
 ^Shoutout to Matt Cheney for diagrams and inspiration
 ^Special to Mark Llobrera for helping put together
 
+----
+#Want my warez?
+
+###[github.com/willvedd/drupaldelphia-headless-demo](https://github.com/willvedd/drupaldelphia-headless-demo)
