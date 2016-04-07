@@ -1,0 +1,45 @@
+
+<script src="https://cdn.jsdelivr.net/riot/2.3/riot+compiler.min.js"></script>
+<script type="riot/tag" src="../themes/demo_theme/music_player/app.tag"></script> {# This tag/component is a wrapper for the app #}
+<script type="riot/tag" src="../themes/demo_theme/music_player/song.tag"></script> {# This tag/component includes template and logic for songs #}
+<script type="riot/tag" src="../themes/demo_theme/music_player/raw.tag"></script>{# This tag/component simply allows you to inject raw html into a component. Similar to react's dangerouslySetInnerHTML #}
+<script>
+	function loadJSON(path, success, error){
+	    var xhr = new XMLHttpRequest();
+	    xhr.onreadystatechange = function()
+	    {
+	        if (xhr.readyState === XMLHttpRequest.DONE) {
+	            if (xhr.status === 200) {
+	                if (success)
+	                    success(JSON.parse(xhr.responseText));
+	            } else {
+	                if (error)
+	                    error(xhr);
+	            }
+	        }
+	    };
+	    xhr.open("GET", path, true);
+	    xhr.send();
+	}
+	loadJSON('http://headless.localhost.com/api/songs',
+		function(data) {
+			riot.compile(function() {
+				riot.mount('app',{'music_data': data});//once data exists, mount app with fetched data as an argument
+			});
+		},
+		function(xhr) { console.error(xhr); }
+	);
+</script>
+
+<app>
+	<div class="loading-screen">
+		<h1>Loading music player...</h1>
+		<!-- Enter no js fallback here-->
+		<noscript>
+			<style>.loading-screen>h1{display: none;}</style>
+			<h1>Javasbeen disabled</p>
+				<p>Put your js fallback here</p>
+		</noscript>
+	</div>
+</app>
+
