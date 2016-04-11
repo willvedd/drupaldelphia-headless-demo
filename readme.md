@@ -2,7 +2,7 @@ Headless Drupal - Drupaldelphia 2016
 ====================
 Repo that goes along with my Drupaldelphia talk about my thoughts and experiences on decoupled architectures; with most of the emphasis on partially decoupled as a technique to achieve a well engineered product. 
 
-##Getting going with the demo
+##Getting started with the demo
 
 - Demo directory contains the drupal install
 - All configurations in demo_database.zip
