@@ -1,6 +1,6 @@
 # Beheading Drupal...
 
-#####Alternate title: OFF WITH YER HEAD!
+#####Alternate title: Drupal, a love story
 
 ### Will Vedder :whale2:
 
@@ -23,13 +23,13 @@
 # Williamson Vedder :whale2:
 ### Dev, adjunct professor ']['
 
+![inline  60%](diagrams/bc-logo.png)
 Currently @ Bluecadet
-
-Formerly @ Temple Univesity
+Formerly @ TU Creative Services
 
 ^So who am I?
 
-^Bluecadet is an interactive agency...
+^Bluecadet is an Emmy Award-winning digital agency that creates world-class websites, mobile apps, interactive installations, and immersive environments.
 
 ---
 
@@ -38,8 +38,6 @@ Formerly @ Temple Univesity
 ^Who here has implemented a headless setup?
 
 ^...with success?
-
-
 
 ---
 
@@ -51,7 +49,7 @@ Hard separation between theming layer and rest of CMS. Drupal acts as an API to 
 
 ^Drupal sends mostly raw data
 
-^Frontend framework consumes data and generates html
+^Front-end framework consumes data and generates html
 
 ^Headless = decoupled
 
@@ -77,6 +75,37 @@ Hard separation between theming layer and rest of CMS. Drupal acts as an API to 
 
 ---
 
+![left fit](diagrams/traditional-diagram.png)
+
+#None (traditional)
+
+No hard separation. Drupal handles data processing and theming. 
+
+Think: most Drupal sites now. Business as usual.
+
+^For the sake of comparison
+
+---
+#None (traditional) pros :thumbsup:
+
+- Likely already pretty good at it
+
+- Everything under the hood already
+
+---
+#None (traditional) cons  :thumbsdown:
+
+- Slow and expensive async interactions
+
+- Often difficult to customize markup of UI elements
+
+- Modules are usually great but difficult to extend
+
+- Modules blur data-theming line 
+
+
+---
+
 ![left fit](diagrams/full-diagram.png)
 
 #Fully Decoupled
@@ -89,7 +118,9 @@ Think: Single page apps (SPAs).
 
 ---
 
-![fit](videos/hmt.mov)
+![inline](videos/hmt.mov)
+
+####hoovermason.com
 
 ^Responsive webapp
 
@@ -102,8 +133,6 @@ Think: Single page apps (SPAs).
 ^Completely custom experience
 
 ^Traditional architecture wouldn't have made sense
-
-
 
 ---
 
@@ -140,37 +169,6 @@ Think: Single page apps (SPAs).
 
 ^Proxy browsers, opera mini etc.
 
-
----
-
-![left fit](diagrams/traditional-diagram.png)
-
-#None (traditional) :couple:
-
-No hard separation. Drupal handles data processing and theming. 
-
-Think: most Drupal sites now. Business as usual.
-
-^For the sake of comparison
-
----
-#None (traditional) pros :thumbsup:
-
-- Likely already pretty good at it
-
-- Everything under the hood already
-
----
-#None (traditional) cons  :thumbsdown:
-
-- Slow and expensive async interactions
-
-- Often difficult to customize markup of UI elements
-
-- Modules are usually great but difficult to extend
-
-- Modules blur data-theming line 
-
 ---
 
 #Doesn't need to be all or nothing
@@ -190,6 +188,8 @@ Think: dashboards, calculators.
 
 ---
 ![fit](videos/bric.mov)
+
+^Two view modes, decoupled makes it esasy,same data
 
 ---
 
@@ -227,29 +227,29 @@ Think: dashboards, calculators.
 
 #D8 Walkthrough: Gameplan
 
-- Install
-- Easy sitebuilding
+- Easy site-building
 - Enable an included module
 - Create a view -> your api
 - Create custom template
 - Create your app
 - Put app into custom template
 
+
+^Riot.js app, react-like
+
+^Straightforward syntax and architecture
+
 ---
 
 #D8 Walkthrough: First steps
 
 - Clean install
-
-- Duplicated Bartik as base for custom theme
-
+- Duplicate Bartik for custom theme
 - Create "Music Player" basic page
-
-- Created "Song" content type
-    - Title
+- Created "Song" content type:
     - Artist
     - Embed code
-    - Mood:smirk:
+    - Mood :smirk:
 
 ---
 
@@ -293,9 +293,13 @@ Think: dashboards, calculators.
 ![fit](videos/demo.mov)
 
 ---
-#Things I wish I knew about APIs:
+#Things I wish I knew about APIs 
+
+#:hushed:
  
-##:neutral_face: A disclaimer :hushed:
+^ A disclaimer
+
+^ Not going to stand up here and tell you how to structure your api
 
 ---
 #API Reflections:
@@ -379,28 +383,55 @@ n = 10, 600+ nodes w/17 fields each, 46kb
 
 - Client handles subsequent renders
 
-- Not waiting for JS framework boostrap :fire:
+- Not waiting for JS framework bootstrap :fire:
 
 - SEO and crawler benefits 🤖
 
+^Remember when I mentioned server side rendering earlier?
+
 ^Server side is big deal
 
-^Talk doesn't do it justice
+^React, Angular2, riotjs and more frameworks support this now
 
+^Talk doesn't do it justice
 
 ----
 
 #Server-side rendering implementation
 
-- Quick and dirty solution? use a view
+- Quick and dirty solution? Use a view
 
-- Well-engineered solution: add a server in your stack
+- Well-engineered solution? Add a node server in your stack
 
-![right fit](diagrams/isomorphic-full-diagram.png)
+
+^Limited hosting resources? Quick and dirty not bad
 
 ^Again, big deal, talk doesn't do it justice
 
 ^Due to limited time and resources, went with a view
+
+___
+
+###Server-side rendering: quick and dirty
+
+![inline](diagrams/bric-nojs-view.png)
+
+___
+
+###Server-side rendering: quick and dirty
+
+![inline](diagrams/bric-nojs-code.png)
+
+---
+
+###Server-side rendering: quick and dirty
+![inline](videos/bric_nojs.mov)
+
+___
+
+#Server-side rendering: well-engineered
+
+![right fit](diagrams/isomorphic-full-diagram.png)
 
 ----
 #Takeaways  :sunglasses:
@@ -409,7 +440,7 @@ The headless approach isn’t about following the trend and applying it haphazar
 
 
 ^Quick thanks
-^Shoutout to Matt Cheney for diagrams and inspiration
+^Shoutout to Matt Cheney @Pantheon for diagrams and inspiration
 ^Special to Mark Llobrera for helping put together
 
 ----
